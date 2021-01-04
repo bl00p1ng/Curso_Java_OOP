@@ -42,4 +42,24 @@
 
   También conocidos como **métodos**. Son las operaciones que realiza el objeto. Pueden ser verbos o sustantivo y verbo. **Por ejemplo:** ``login()``, ``logout()``, ``makeReport()``.
 
+- ### Abstracción: ¿Qué es una Clase?
+
+  Son el modelo sobre el cuál se construirá un objeto. Se puede decir que de cierta forma una Clase es un especie de molde que se usa para construir Objetos.
+
+  #### Abstracción
+
+  Es un concepto en el que se analiza un Objeto para extraer sus composición y en base a eso crear una Clase. En resumidas cuentas, la abstracción es ese proceso de analizar los  objetos para identificar sus atributos y métodos comunes para en base a  eso crear un molde llamando Clase.
+
+  El flujo de trabajo con POO es el siguiente:
+
+  1. Analizar el problema y extraer los Objetos que lo componen.
+  2. Abstraer dichos Objetos en Clases.
+  3. Gráficar las Clases en UML
+  4. Implementar con código el diagrama UML.
+
+  #### Graficar Clases en UML
+
+  ![Clases en UML](https://i.imgur.com/Li7Ndkf.png)
+
   
+
