@@ -111,6 +111,16 @@
   myDoctor.showname(); // Llamar a un método
   ````
 
+- ### Método constructor
+
+  ````java
+  Doctor myDoctor = new Doctor(); // Doctor() → Método constructor
+  ````
+
+  El método constructor se llama igual que la Clase a la que pertenece. Cuando no se define explícitamente, el compilador de Java crea internamente uno por default.
+
+  El método constructor es el que se encarga de crear nuevas instancias de una Clase. Se invoca con la palabra reservada ``new``. Puede tener cero o más parámetros y **No retorna un valor**.
+
   
 
 
