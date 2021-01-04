@@ -101,15 +101,15 @@
   }
   ````
 
-  #### Instanciar un Objeto en Java
+#### Instanciar un Objeto en Java
 
-  ``Doctor`` → Tipo de Objeto ``myDoctor`` → Nombre de la instancia del Objeto ``new Doctor();`` → Crea la instancia del Objeto
+``Doctor`` → Tipo de Objeto ``myDoctor`` → Nombre de la instancia del Objeto ``new Doctor();`` → Crea la instancia del Objeto
 
-  ````java
-  Doctor myDoctor = new Doctor();
-  myDoctor.name = "Alejandro López"; // Asignar un valor a un atributo
-  myDoctor.showname(); // Llamar a un método
-  ````
+````java
+Doctor myDoctor = new Doctor();
+myDoctor.name = "Alejandro López"; // Asignar un valor a un atributo
+myDoctor.showname(); // Llamar a un método
+````
 
 - ### Método constructor
 
@@ -121,7 +121,64 @@
 
   El método constructor es el que se encarga de crear nuevas instancias de una Clase. Se invoca con la palabra reservada ``new``. Puede tener cero o más parámetros y **No retorna un valor**.
 
+- ### Static: Variables y Métodos Estáticos
+
+  Hay otra forma de llamar a Clases y a sus respectivos métodos/atributos sin tener que crear una instancia con ``new``. Ese es caso de las **Clases estáticas** como ``Math``.
+
+  ````java
+  Math.random();
+  Math.PI;
+  ````
+
+  ####  Métodos static
+
+  Se definen con la palabra reservada ``static``. Los métodos static pueden ser accedidos usando **el nombre de la Clase**, **la notación de punto** y  el nombre del método.
+
+  **Ejemplo:**
+
+  ````java
+  public class Calculadora() {
+      public static final double PI = 3.1415926;
+      public static int valor = 0;
+      public static int suma(int a, inst b) {
+          return a + b;
+      }
+  }
   
+  // Llamar al método
+  Calculadora.suma(5, 2);
+  // Llamar a los atributos
+  Calculadora.PI;
+  Calculadora.valor;
+  ````
+
+   Los atributos/métodos estáticos pueden ser accedidos y modificados por cualquier Clase dentro del programa.
+
+  #### Miembros static
+
+  Son otra forma de llamar a atributos/métodos estáticos.
+
+  ````java
+  import static com.blooping.operaciones.Calculadora.*;
+  import static java.lang.Math.*;
+  
+  // Llamar a estos atributos
+  
+  public class Principal {
+  	public static void main(String[] args) {
+       	System.out.println(suma(3, 5));
+          System.out.println(PI);
+      }
+  }
+  ````
+
+  
+
+  
+
+
+
+
 
 
 
