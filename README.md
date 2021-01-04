@@ -81,3 +81,37 @@
 
   Las Clases juegan un papel fundamental dentro de la modularidad, pues permiten dividir el software en diferentes partes o módulos/Clases y a su vez separar dichas Clases en archivos diferentes.
 
+## 📚 Módulo 2. Definir Clases y sus componentes
+
+- ### Creando nuestra primera Clase
+
+  #### Crear una Clase en Java
+
+  ````java
+  public class Doctor { // Doctor → Nombre de la Clase
+      // Atributos
+      int id;
+      String name;
+      String speciality;
+  
+      // Métodos
+      public void showName() {
+          System.out.println(name);
+      }
+  }
+  ````
+
+  #### Instanciar un Objeto en Java
+
+  ``Doctor`` → Tipo de Objeto ``myDoctor`` → Nombre de la instancia del Objeto ``new Doctor();`` → Crea la instancia del Objeto
+
+  ````java
+  Doctor myDoctor = new Doctor();
+  myDoctor.name = "Alejandro López"; // Asignar un valor a un atributo
+  myDoctor.showname(); // Llamar a un método
+  ````
+
+  
+
+
+
