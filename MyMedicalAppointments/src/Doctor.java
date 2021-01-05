@@ -5,11 +5,19 @@ public class Doctor {
     String name;
     String speciality;
 
-    // Método constructor
-    Doctor(String name) {
+    // Métodos constructores
+
+    Doctor() {
+
+        System.out.println("Construyendo el Objeto Doctor");
+
+    }
+
+    Doctor(String name, String speciality) {
 
         id++;
         this.name = name;
+        this.speciality = speciality;
 
     }
 
