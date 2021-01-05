@@ -152,7 +152,7 @@ myDoctor.showname(); // Llamar a un método
   Calculadora.valor;
   ````
 
-   Los atributos/métodos estáticos pueden ser accedidos y modificados por cualquier Clase dentro del programa.
+   Los atributos/métodos estáticos tienen un scope global, por lo que pueden ser accedidos y modificados por cualquier Clase dentro del programa.
 
   #### Miembros static
 
@@ -207,6 +207,20 @@ myDoctor.showname(); // Llamar a un método
       }
   }
   ````
+
+  **Nota:** sobre el uso de los wildcards(*) al hacer un import lo ideal es importar el método especifico que se requiera. No es una buena buena práctica importar todo el módulo usando * pues esto al trabajar con módulos grandes esto ocupa mucho espacio en la memoria y hace más lento el proceso de indexación en el IDE a la hora de buscar el método.
+
+- ### Final: Variables Constantes
+
+  #### Declarar una constante en Java
+
+  ````java
+  public static final double PI = 3.1415926;
+  ````
+
+  
+
+  
 
 
 
