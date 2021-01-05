@@ -313,7 +313,23 @@ myDoctor.showname(); // Llamar a un método
   }
   ````
 
-  
+- ### Encapsulamiento: Modificadores de acceso
+
+  Permite restringir el nivel de acceso a los datos del programa y validar dichos datos. Esto se hace mediante modificadores de acceso. En Java existen los siguientes:
+
+  ![Modificadores de acceso en Java](https://i.imgur.com/4pYTpU7.png)
+
+- ### Getters y Setters
+
+  Permiten leer y escribir específicamente los valores de las variables miembro.
+
+  **Gettter:** obtiene el valor de la variable.
+
+  **Setter: ** asigna/modifica el valor de la variable.
+
+  En IntelliJ Idea se pueden generar los getters y setters de forma más automatizada usando: *Alt + Insert*  → *Getter and Setter*
+
+
 
 
 
