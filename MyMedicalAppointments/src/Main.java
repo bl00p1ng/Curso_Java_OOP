@@ -10,6 +10,9 @@ public class Main {
         System.out.println("Doctor: " + myDoctor.name);
         System.out.println("Especialidad: " + myDoctor.speciality);
 
+        Patient patient = new Patient("Felipe", "felipe@example.com");
+
+
     }
 
 }
