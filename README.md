@@ -174,7 +174,41 @@ myDoctor.showname(); // Llamar a un método
 
   
 
+- ### Creando elementos estáticos
+
+  Los métodos estáticos son muy útiles cuando se quiere llamar a un método pero sin tener que instanciar una Clase, pues hace eso no quedaría bien a nivel de lógica, pues se instanciaría una Clase que sólo muestra elementos en pantalla pero que no tiene atributos ni nada más, lo cuál sería totalmente incensario.
+
+  En esos casos se puede crear  un método statico y así mantener el código lo más limpio posible. Para empezar se puede crear un *package* y en su interior crear la Clase que muestra el menú.
+
+  ````java
+  package UI; // Relaciona la Clase con el package UI
   
+  import java.util.Scanner; // Importa Scanner una Clase que permite ingresar datos desde la terminal
+  
+  public class UIMenu {
+      // Métodos
+          // Mostrar menú
+          public static void showMenu() {
+              // Código qu emuestra el ménú
+          }   
+  }
+  ````
+
+  Luego para usar ese método hay que importar el método estático para poder usarlo.
+
+  ````java
+  import static UI.UIMenu.*;
+  
+  public class Main {
+  
+      public static void main(String[] args) {        
+          // Mostar menú de la UI
+          showMenu();
+      }
+  }
+  ````
+
+
 
 
 
