@@ -329,6 +329,44 @@ myDoctor.showname(); // Llamar a un método
 
   En IntelliJ Idea se pueden generar los getters y setters de forma más automatizada usando: *Alt + Insert*  → *Getter and Setter*
 
+- ### Variable vs. Objeto
+
+  Las **variables** son entidades elementales (muy sencillas). Sólo pueden almacenar un valor que puede ser:
+
+  - Un número.
+  - Un caractér.
+  - Un valor verdadero o falso.
+
+  Los **objetos** por el contrario, son entidades más complejas que pueden estar formadas por la agrupación de muchas variables y métodos.
+
+  Los **arreglos** son agrupaciones de una cantidad fija de elementos de un mismo tipo de dato.  Pueden almacenar tipos de datos primitivos y objetos. Los arreglos además, son objetos, con la diferencia de que sólo almacenan valores de un sólo tipo de datos.
+
+  #### Clases Wrapper / Objeto primitivo
+
+  Son clases que por decirlo de cierta forma, "envuelven" a un primitivo para dotarlo de características de un Objeto, para por ejemplo tener métodos para manipular a ese tipo primitivo. En Java existen las siguientes Clases Wrapper:
+
+  - Byte
+  - Short
+  - Integer
+  - Long
+  - Float
+  - Double
+  - Character
+  - Boolean
+  - String
+
+  #### Parseo
+
+  Es cuando se cambia el tipo de dato de un objeto.
+
+  #### Casting
+
+  Cuando se cambia el tipo de dato entre variables.
+
+  
+
+  
+
 
 
 
