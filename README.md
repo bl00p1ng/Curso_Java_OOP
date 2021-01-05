@@ -218,7 +218,62 @@ myDoctor.showname(); // Llamar a un método
   public static final double PI = 3.1415926;
   ````
 
+- ### Variable vs. Objeto: Un vistazo a la memoria
+
+  Las variables de tipo primitivo en Java y los objetos se almacenan de forma diferente en la memoria.
+
+  #### Stack
+
+  Es una memoria con una estructura de "pila". En el caso de las **variables primitivos** en el stack se almacena  directamente su valor.
+
+  Por el contrario en el caso de los **objetos** en el stack no se almacena el objeto como tal, sino una referencia al lugar en memoria donde se almacena el objeto (memoria heap).
+
+  #### Heap
+
+   Es una memoria con una estructura de "árbol". Aquí los datos pueden crecer o decrecer. En esta memoria se  almacenan los objetos como tal, con sus respectivos atributos.
+
+  ![Stack y Heap](https://i.imgur.com/Whf16AX.png)
+
+  Por esta razón, al hacer una reasignación a una variable, cuando esta es primitiva se reasigna el valor de la variable, pero en el caso de los objetos lo que se reasigna es la dirección en memoria.
+
+  Por ejemplo si se tiene:
+
+  ````java
+  int a = 1;
+  int b = 2;
+  b = a; // b pasará a valer 0
+  ````
+
+  Pero cuando se trata de objetos:
+
+  ````java
+  Doctor doctor1 = new Doctor("Andrés");
+  Doctor doctor2 = new Doctor("Felipe");
   
+  doctor1.showName();
+  doctor2.showName();
+  
+  /* 
+  RESULTADO: 
+  El nombre del Doctor asignado es Andrés
+  El nombre del Doctor asignado es Felipe
+  */
+  
+  System.out.println("\n");
+  
+  doctor2 = doctor1;
+  doctor1.showName();
+  doctor2.showName();
+  
+  /* 
+  RESULTADO: 
+  El nombre del Doctor asignado es Andrés
+  El nombre del Doctor asignado es Andrés
+  */
+  
+  ````
+
+  Esto se debe a que se reasigna la dirección en memoria del objeto. Ahora ``doctor2`` apunta al lugar en memoria donde esta guardado ``doctor1`` de hecho cualquier cambio que se realice en ``doctor1`` se verá en ``doctor2``.
 
   
 

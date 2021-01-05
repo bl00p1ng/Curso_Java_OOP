@@ -6,14 +6,17 @@ public class Doctor {
     String speciality;
 
     // Método constructor
-    Doctor() {
+    Doctor(String name) {
+
         id++;
+        this.name = name;
+
     }
 
     // Métodos
     public void showName() {
 
-        System.out.println("El nombre del Doctor asignado es" + name);
+        System.out.println("El nombre del Doctor asignado es " + name);
 
     }
 
