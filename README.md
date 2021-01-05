@@ -277,6 +277,46 @@ myDoctor.showname(); // Llamar a un método
 
   
 
+- ### Sobrecarga de métodos y constructores
+
+  Consiste en hacer que dos o más métodos tengan el mismo nombre pero con argumentos diferentes. 
+
+  #### Ejemplo de sobrecarga
+
+  ````java
+  public class Calculadora {
+      public int suma (int a, int b) {
+          return a + b;
+      }
+      public float suma (float a, float b) {
+          return a + b;
+      }
+      public float suma (int a, float b) {
+          return a + b;
+      }
+  }
+  ````
+
+  No sólo pueden variar el tipo de dato de los argumentos como en el ejemplo anterior, también puede variar la cantidad de argumentos.
+
+  La sobrecarga también se puede aplicar a los *métodos constructores*.
+
+  ````java
+  Doctor() {
+      System.out.println("Construyendo el Objeto Doctor");
+  }
+  
+  Doctor(String name, String speciality) {
+      id++;
+      this.name = name;
+      this.speciality = speciality;
+  }
+  ````
+
+  
+
+
+
 
 
 

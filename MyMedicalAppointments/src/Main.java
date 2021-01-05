@@ -1,4 +1,4 @@
-import static UI.UIMenu.*;
+//import static UI.UIMenu.*;
 
 public class Main {
 
@@ -6,19 +6,9 @@ public class Main {
 
         // Mostar menú de la UI
         //showMenu();
-
-        Doctor doctor1 = new Doctor("Andrés");
-        Doctor doctor2 = new Doctor("Felipe");
-
-        doctor1.showName();
-        doctor2.showName();
-
-        System.out.println("\n");
-
-        doctor2 = doctor1;
-        doctor1.showName();
-        doctor2.showName();
-
+        Doctor myDoctor = new Doctor("Andrés López", "Psiquiatra");
+        System.out.println("Doctor: " + myDoctor.name);
+        System.out.println("Especialidad: " + myDoctor.speciality);
 
     }
 
