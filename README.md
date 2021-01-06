@@ -597,11 +597,28 @@ myDoctor.showname(); // Llamar a un método
   Un ``enum`` no puede utilizarse para crear objetos, y no puede extender otras clases (pero puede implementar interfaces).
   <h4>¿Por qué y cuándo usar los enum?</h4>
 
-  Los enumerations son útiles ciando se tienen valores que se sabe que no van a cambiar, como los días del mes, los días, los colores, una baraja de cartas, etc.
-
-  
+  Los enumerations son útiles cuando se tienen valores que se sabe que no van a cambiar, como los días del mes, los días, los colores, una baraja de cartas, etc.
 
 
+## 📚 Módulo 3. Reutilizar Código
+
+- ### ¿Qué es la Herencia? Don\'t repeat Yourself
+
+  La **Herencia** permite crear nuevas Clases a partir de otras.
+
+  En la herencia se establece una relación **padre e hijo**. A la clase padre se le conoce como **súper clase** y a sus clases hijas se les llama **subclases**.
+
+  Si una clase es una especie de molde para crear objetos, en la herencia se hace algo así como "crear un molde para hacer moldes".
+
+  ![Herencia](https://i.imgur.com/PKcznhI.png)
+
+  > "Cuando se detectan características y comportamientos iguales se debe realizar una abstracción."
+
+  #### DRY: Don\'t repeat Yourself
+
+  - Promueve la reducción de la duplicación en programación.
+  - Las piezas de información **nunca deben duplicarse**.
+  - **Reduce la dificultad** en los cambios y evolución.
 
 
 
