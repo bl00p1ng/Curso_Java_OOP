@@ -415,10 +415,10 @@ myDoctor.showname(); // Llamar a un método
             }
         }
     }
-    ````
-    
+  ````
+  
     Para llamar a una Clases estática anidada sólo hay que instanciar a la Clase exterior:
-    
+  
     ````java
     public class Main {
         public static void main(String[] args) {
@@ -440,6 +440,20 @@ myDoctor.showname(); // Llamar a un método
   ````
   
   **Nota:** si se tiene un atributo cuya estructura de dato es muy compleja, puede ser recomendable crear una Clase anidada.
+  
+  #### Métodos de un ArrayList
+  
+  Los siguientes son los métodos más comunes.
+  
+  ````java
+  nombreArrayList.add("Elementos");
+  nombreArrayList.size(); // Retorna el número de elementos de un ArrayList
+  nombreArrayList.get(2); // Retorna el elemento que esta en determinada posición de un ArrayList
+  nombreArrayList.set(index, element) // Sustituye un elemeto por otro. index → Indice del elemento a sustituir. element → Elemento a insertar.
+  nombreArrayList.remove(5) // Quitar un elemento
+  ````
+  
+  
 
  
 
