@@ -517,6 +517,89 @@ myDoctor.showname(); // Llamar a un método
       ````
   
       Este tipo de Clases también consumen más espacio en memoria. Lo recomendable en estos casos es usar Clases estáticas anidadas para hacer un mejor uso de la memoria.
+  
+- ### Enumerations
+
+  Sirven para declarar una colección de constantes. Son muy útiles para representar un conjunto de cosas que no cambian, como por ejemplo los días de la semana.
+
+  Para crear un Enumeration se usa la palabra reservada ``enum``.
+
+  ````java
+  public enum Day {
+  	SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+  	THURSDAY, FRIDAY, SATURDAY
+  }
+  ````
+
+  Se pueden crear referencias de enumerations de la siguiente forma:
+
+  ````java
+  Day day;
+  switch (day) {
+  	case MONDAY:
+  		System.out.println(“Mondays are good.”);
+  		break;
+  	case FRIDAY:
+  		System.out.println(“Fridays are nice”);
+  		break;
+  	case SATURDAY: case: SUNDAY:
+  		System.out.println(“Weekends are the best”);
+  		break;
+  	default:
+  		System.out.println(“Midweek are so-so”);
+  		break;
+  }
+  ````
+
+  Se puede llamar un valor del enumeration así:
+
+  ````java
+  Day.MONDAY;
+  Day.FRIDAY;
+  Day.SATURDAY
+  ````
+
+  Los enumerations pueden tener atributos, métodos y constructores, como se muestra en el siguiente ejemplo:
+
+  ````java
+  public enum Day {
+  	MONDAY("Lunes");
+  	TUESDAY("Jueves");
+  	FRIDAY("Viernes");
+  	SATURDAY("Sábado");
+  	SUNDAY("Domingo");
+  
+  	private String spanish;
+  	private Day(String s) {
+      	spanish = s;
+    	}
+  
+  	private String getSpanish() {
+  		return spanish;
+    	}
+  }
+  ````
+
+  Se pueden usar así:
+
+  ````java
+  System.out.println(Day.MONDAY); // Imprime MONDAY
+  ````
+
+  ````java
+  System.out.println(Day.MONDAY.getSpanish()); // Imprime Lunes
+  ````
+
+  #### Diferencias entre Enumerations y Clases
+
+  Un ``enum`` puede, al igual que una clase, tener atributos y métodos. La única diferencia es que las constantes del ``enum`` son ``public``, ``static`` y ``final`` (inmutables - no pueden ser anuladas).
+
+  Un ``enum`` no puede utilizarse para crear objetos, y no puede extender otras clases (pero puede implementar interfaces).
+  <h4>¿Por qué y cuándo usar los enum?</h4>
+
+  Los enumerations son útiles ciando se tienen valores que se sabe que no van a cambiar, como los días del mes, los días, los colores, una baraja de cartas, etc.
+
+  
 
 
 
