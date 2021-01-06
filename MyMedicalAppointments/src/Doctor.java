@@ -1,42 +1,20 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor {
+public class Doctor extends User {
 
     // Atributos
-    static int id = 0;
-    private String name;
     private String speciality;
 
-    // Métodos constructores
+    // Método constructor
 
-    Doctor() {
+    Doctor(String name, String email) {
 
-        System.out.println("Construyendo el Objeto Doctor");
-
-    }
-
-    Doctor(String name, String speciality) {
-
-        id++;
-        this.name = name;
-        this.speciality = speciality;
+        super(name, email);
 
     }
 
     // Métodos
-    public void showName() {
-
-        System.out.println("El nombre del Doctor asignado es " + name);
-
-    }
-
-    public void showId() {
-
-        System.out.println("ID Doctor: " + id);
-
-    }
-
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
     public void addAvailableAppointment(Date date, String time) {
 
@@ -48,6 +26,16 @@ public class Doctor {
 
         return availableAppointments;
 
+    }
+
+
+    // Getters y Setters
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 
     // Static Nested Class Available Appointment
@@ -67,17 +55,7 @@ public class Doctor {
 
         }
 
-        // Getters y Setters
-
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
+        // Getters y Setters Static Nested Class
         public Date getDate() {
             return date;
         }
@@ -93,6 +71,9 @@ public class Doctor {
         public void setTime(String time) {
             this.time = time;
         }
+
+
+
     }
 
 }

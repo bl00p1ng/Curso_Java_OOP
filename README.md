@@ -620,7 +620,25 @@ myDoctor.showname(); // Llamar a un método
   - Las piezas de información **nunca deben duplicarse**.
   - **Reduce la dificultad** en los cambios y evolución.
 
+- ### Super y this
 
+  La herencia se define con la siguiente sintaxis:
+
+  ````java
+  public class Doctor extends User { // User → Súper Clase
+      
+  }
+  ````
+
+  - #### Super 
+
+    Indica que una variable o un método es de la Clase Padre (superclase).
+
+  - #### this
+
+    Permite especificar que la variable que esta señalando (``this.nombreVariable``) es de la misma Clase en que se usa.
+
+    
 
 
 
