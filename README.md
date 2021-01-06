@@ -694,7 +694,9 @@ myDoctor.showname(); // Llamar a un método
   }
   ````
 
-  
+- ### Polimorfismo: Sobreescribiendo el método toString
+
+  El **polimorfismo** es la posibilidad de sobrescribir un método con **comportamientos diferentes.**
 
 
 

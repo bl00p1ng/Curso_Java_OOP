@@ -38,6 +38,16 @@ public class Doctor extends User {
         this.speciality = speciality;
     }
 
+    // Sobrescritura de métodos
+    @Override
+    public String toString() {
+
+        return super.toString() +
+            "\nSpeciality: " + speciality +
+            "\nAvailable: " + availableAppointments.toString();
+
+    }
+
     // Static Nested Class Available Appointment
     public static class AvailableAppointment {
 
@@ -72,7 +82,15 @@ public class Doctor extends User {
             this.time = time;
         }
 
+        // Sobrescritura de métodos
+        @Override
+        public String toString() {
 
+            return "AvailableAppointments: \n" +
+                "\nDate: " + date +
+                "\nTime: "+ time;
+
+        }
 
     }
 

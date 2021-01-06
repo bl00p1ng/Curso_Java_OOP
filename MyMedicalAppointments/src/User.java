@@ -67,11 +67,14 @@ public class User {
     // Sobrescritura de métodos
     @Override
     public String  toString() {
+
         return "User{" +
             "name='" + name + '\'' +
             ", email='" + email + '\'' +
             ", address='" + address + '\'' +
             ", phoneNumber='" + phoneNumber + '\'' +
             '}';
+
     }
+
 }

@@ -14,15 +14,16 @@ public class Main {
         myDoctor.addAvailableAppointment(new Date(), "1pm");
 
         // Mostrar citas disponibles
-        for (Doctor.AvailableAppointment availableAppointment : myDoctor.getAvailableAppointments()) {
+        /*for (Doctor.AvailableAppointment availableAppointment : myDoctor.getAvailableAppointments()) {
 
             System.out.println(availableAppointment.getDate() + " " + availableAppointment.getTime());
 
-        }
+        }*/
 
         Patient patient = new Patient("Felipe Molina", "felipe@example.com");
 
         System.out.println(patient);
+        System.out.println(myDoctor);
 
     }
 
