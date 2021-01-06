@@ -404,18 +404,18 @@ myDoctor.showname(); // Llamar a un método
 
     En las Clases estáticas anidadas no es necesario crear instancias para poder llamarlas. Se llaman usando con ``ClaseExterior.ClaseEstaticaAnidada``. Para poder llamar a un método de un Clase estática anidada, dicho método también debe ser estático.
     **Ejemplo de Clase estática:** 
-    
-  ````java
-    public class Enclosing {
-        private static int x = 1;
-      
-        public static class StaticNested {
-            private void run() {
-                // Implementación
+
+      ````java
+        public class Enclosing {
+            private static int x = 1;
+
+            public static class StaticNested {
+                private void run() {
+                    // Implementación
+                }
             }
         }
-    }
-  ````
+      ````
   
     Para llamar a una Clases estática anidada sólo hay que instanciar a la Clase exterior:
   
@@ -455,7 +455,68 @@ myDoctor.showname(); // Llamar a un método
   
   
 
- 
+- ### Clases Internas y Locales a un método
+
+  - #### Clases Internas
+
+      También llamadas *Clases anidadas no estáticas*. Al no ser una Clase estática, es necesario instanciarla. **Ejemplo:**
+
+      ````java
+      // Declaración de la Clase Interna
+      public class Outer {
+          public class Inner {
+
+          }
+      }
+      ````
+
+      Llamar a la Clase:
+
+      ````java
+      public class Main {
+          public static void main(String[] args) {
+            Outer outer = new Outer();
+            Outer.Inner inner = outer.new Inner();
+          }
+      }
+      ````
+
+      Para declarar este tipo de Clases hay que instanciar 2 objetos, lo que consume más espacio en memoria, por lo tanto, hay que tener cuidado al usar este tipo de Clases, de hecho este tipo de Clases no son muy comunes.
+      
+  - #### Clases Locales a un Método
+  
+      Este tipo de Clases tienen un scope definido para el método al que pertenecen, en el ejemplo de abajo ese método sería el primer ``void run()``.
+  
+      Si se quiere tener acceso al método ``run`` de la Clase Local, hay que crear una instancia de dicha Clase.
+  
+      Declarar una Clase Local a un método
+  
+      ````java
+      public class Enclosing {
+          void run() {
+              class Local {
+                  void run() {
+                      ...
+                  }
+              }
+              Local local = new Local();
+              local.run();
+          }
+      }
+      ````
+  
+      Instanciar una Clase Local a un método
+  
+      ````java
+      public class Main {
+          public static void main(String[] args) {
+          	Enclosing enclosing = new Enclosing();
+              enclosing.run();
+          }
+      }
+      ````
+  
+      Este tipo de Clases también consumen más espacio en memoria. Lo recomendable en estos casos es usar Clases estáticas anidadas para hacer un mejor uso de la memoria.
 
 
 
