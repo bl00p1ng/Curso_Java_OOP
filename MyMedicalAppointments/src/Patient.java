@@ -44,4 +44,14 @@ public class Patient extends User {
         this.blood = blood;
     }
 
+    // Sobrescritura de métodos
+    @Override
+    public String toString() {
+        return super.toString() +
+            "Age='" + birthday + '\'' +
+            ", weight=" + getWeight() +
+            ", height=" + getHeight() +
+            ", blood='" + blood + '\'' +
+            '}';
+    }
 }

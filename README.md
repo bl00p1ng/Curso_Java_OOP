@@ -640,6 +640,64 @@ myDoctor.showname(); // Llamar a un método
 
     
 
+- ### Polimorfismo: Sobreescritura de Métodos
+
+  En Java hay una Clase de la que heredan todas las Clases, esa es la Clase Object. Esto permite usar una serie de métodos y atributos que proporciona la Clase Object.
+
+  **Nota: ** en Java no se permite la herencia múltiple de Clases. Las Clases hijas sólo pueden tener una Clase padre.
+
+  #### Sobrescritura 
+
+  Cuando una Clase hereda de otra y **en la Clase hija se redefine un método** con una implementación distinta a la de la Clase padre.
+
+  **Nota:** los métodos marcados como ``final`` o ``static`` no se pueden sobrescribir. 
+
+  #### Sobrescritura de Constructores
+
+  Un constructor en una subclase usando los miembros heredados de la superclase **con argumentos diferentes.**
+
+  **Ejemplo:** sobrescribir el método ``toString()``.
+
+  ````java
+  @Override //  Indica que el método qu esta a continuación no es propio de la Clase y va a ser sobrescrito.
+  public String toString() {
+      return "User{" +
+          "id=" + id +
+          ", name='" + name + '\'' +
+          ", email='" + email + '\'' +
+          ", address='" + address + '\'' +
+          ", phoneNumber='" + phoneNumber + '\'' +
+          '}';
+  }
+  ````
+
+  Usar el método con la sobrescritura:
+
+  ````java
+  System.out.println(myDoctor);
+  /*
+  Al imprimir cualquier objeto en la consola con System.out.println(object), en realidad, se esta ejecutando el método .toString() de dicho objeto, por lo que si se sobrescribe este método en una Clase, el resultado en la consola también cambiará automáticamente.
+  */
+  ````
+
+  Se puede sobrescribir un mismo método en diferentes Clases y en cada una darle un comportamiento diferente. Por ejemplo después de sobrescribir el método ``toString()`` en el ejemplo anterior, se podría volver a sobrescribir dicho método para que muestre datos adicionales:
+
+  ````java
+  @Override
+  public String toString() {
+      return super.toString() + // return super.toString() → Retorna el método sobrescrito en la superclase para poder concaternarle los datos adicionales.
+          "Age='" + birthday + '\'' +
+          ", weight=" + getWeight() +
+          ", height=" + getHeight() +
+          ", blood='" + blood + '\'' +
+          '}';
+  }
+  ````
+
+  
+
+
+
 
 
 

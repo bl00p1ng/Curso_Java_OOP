@@ -20,6 +20,10 @@ public class Main {
 
         }
 
+        Patient patient = new Patient("Felipe Molina", "felipe@example.com");
+
+        System.out.println(patient);
+
     }
 
 }
