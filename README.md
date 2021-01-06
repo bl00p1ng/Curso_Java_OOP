@@ -365,7 +365,89 @@ myDoctor.showname(); // Llamar a un método
 
   
 
+- ### Clases Anidadas
+
+  Son una Clase que vive dentro de otra. Son Clases Helper que están agrupadas dentro de la lógica, además también pueden tener encapsulación.
+
+  ````java
+  class ClaseExterior {
+      class ClaseAnidada {
+          ...
+      }
+  }
+  ````
+
+  #### Tipos de Clases anidadas
+
+  - ##### Clases Internas
+
+    - ###### Clases Locales a un método
+
+      Clases declaradas dentro de un método. No es muy común encontrarse con este tipo
+
+    - ###### Clases Internas anónimas
+
+      Están relacionadas con la programación funcional y las funciones lambdas
+
+  - ##### Clases estáticas anidadas
+
+    Son Clases anidadas pero de tipo estático.
+
+    ````java
+    class ClaseExterior {
+    	static class ClaseEstaticaAnidada {
+            ...
+        }
+    }
+    
+    ````
+
+    En las Clases estáticas anidadas no es necesario crear instancias para poder llamarlas. Se llaman usando con ``ClaseExterior.ClaseEstaticaAnidada``. Para poder llamar a un método de un Clase estática anidada, dicho método también debe ser estático.
+    **Ejemplo de Clase estática:** 
+    
+  ````java
+    public class Enclosing {
+        private static int x = 1;
+      
+        public static class StaticNested {
+            private void run() {
+                // Implementación
+            }
+        }
+    }
+    ````
+    
+    Para llamar a una Clases estática anidada sólo hay que instanciar a la Clase exterior:
+    
+    ````java
+    public class Main {
+        public static void main(String[] args) {
+            Enclosing.StaticNested nested = new Enclosing.StaticNested();
+            
+            nested.run();
+        }
+    }
+    ````
   
+  #### Colecciones
+  
+  Una colección es una especie de array de tamaño dinámico que almacena un conjunto de de Objetos (como las Clases Wrapper). Esta dentro del paquete ``java.util``. 
+  
+  ````java
+  ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>(); // <AvailableAppointment> → Tipo de objeto que va a almacenar el ArrayList. availableAppointments → Nombre del ArrayList. new ArrayList<>(); → Constructor del ArrayList
+  
+  availableAppointments.add(new AvailableAppointment(date, time)); // Añadir Objetos al ArrayList
+  ````
+  
+  **Nota:** si se tiene un atributo cuya estructura de dato es muy compleja, puede ser recomendable crear una Clase anidada.
+
+ 
+
+
+
+
+
+
 
 
 

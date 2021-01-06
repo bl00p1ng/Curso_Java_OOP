@@ -1,5 +1,7 @@
 //import static UI.UIMenu.*;
 
+import java.util.Date;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,13 +9,16 @@ public class Main {
         // Mostar menú de la UI
         //showMenu();
         Doctor myDoctor = new Doctor("Andrés López", "Psiquiatra");
-        System.out.println("Doctor: " + myDoctor.name);
-        System.out.println("Especialidad: " + myDoctor.speciality);
+        myDoctor.addAvailableAppointment(new Date(), "4pm");        myDoctor.addAvailableAppointment(new Date(), "4pm");
+        myDoctor.addAvailableAppointment(new Date(), "10am");
+        myDoctor.addAvailableAppointment(new Date(), "1pm");
 
-        Patient patient = new Patient("Felipe", "felipe@example.com");
-        patient.setWeight(54.6);
-        System.out.println(patient.getWeight());
-        patient.setPhoneNumber("12345678");
+        // Mostrar citas disponibles
+        for (Doctor.AvailableAppointment availableAppointment : myDoctor.getAvailableAppointments()) {
+
+            System.out.println(availableAppointment.getDate() + " " + availableAppointment.getTime());
+
+        }
 
     }
 
