@@ -698,6 +698,32 @@ myDoctor.showname(); // Llamar a un método
 
   El **polimorfismo** es la posibilidad de sobrescribir un método con **comportamientos diferentes.**
 
+- ### Interfaces
+
+  Es un tipo de referencia similar a una Clase que podría contener sólo constantes y definiciones de métodos. Una interfaz puede contener por ejemplo métodos que se repiten en varias Clases que no  pertenecen a la misma familia. Esa es su principal diferencia con respecto a la herencia entre Clases pues en esta las Clases que tienen un método en el que se aplican polimorfismo pertenecen a la misma familia y tienen a una superclase en común; por el contrario en las *interfaces* se pueden definir diferentes comportamientos para Clases que no tienen ninguna relación entre si y que pertenecen a familias diferentes.
+  
+  En las interfaces se establece la forma de una Clase (nombres de métodos, listas de argumentos y tipos de retorno) pero **no bloques de código**, por ejemplo en  una interfaz sólo se pondría la redacción de un método pero no su implementación pues esta será radicalmente diferente para cada Clase.
+  
+  #### Declarar una interfaz en Java
+  
+  ````java
+  // Crear una interfaz
+  public IScheduable {
+      schedule(Date date, String Time);
+  }
+  
+  // Implemtar una interfaz en una Clase
+  public class AppointmentDoctor implements IScheduable {
+      ...
+  }
+  ````
+  
+  
+  
+  **Nota:** es muy común que los nombres de las interfaces terminen en *"able"* (**ejemplos:** ``rundable``, ``printable``, ``readable``), esto se debe a que las interfaces se enfocan en las actividades que son redundantes en el código. También es común encontrar que el nombre de la interfaz comience con una "I".
+  
+  
+
 
 
 
