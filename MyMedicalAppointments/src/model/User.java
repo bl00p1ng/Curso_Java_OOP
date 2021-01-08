@@ -1,3 +1,5 @@
+package model;
+
 public class User {
 
     // Atributos
@@ -68,7 +70,7 @@ public class User {
     @Override
     public String  toString() {
 
-        return "User{" +
+        return "model.User{" +
             "name='" + name + '\'' +
             ", email='" + email + '\'' +
             ", address='" + address + '\'' +
