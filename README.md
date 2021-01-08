@@ -406,15 +406,15 @@ myDoctor.showname(); // Llamar a un método
     **Ejemplo de Clase estática:** 
 
       ````java
-        public class Enclosing {
-            private static int x = 1;
+    public class Enclosing {
+        private static int x = 1;
 
-            public static class StaticNested {
-                private void run() {
-                    // Implementación
-                }
+        public static class StaticNested {
+            private void run() {
+                // Implementación
             }
         }
+    }
       ````
   
     Para llamar a una Clases estática anidada sólo hay que instanciar a la Clase exterior:
@@ -796,7 +796,7 @@ myDoctor.showname(); // Llamar a un método
 
     ![Explicación gráfica de una  estructura de datos doblemente ligada](https://i.imgur.com/NAa7Qmn.png)
 
-    *↑ Explicación gráfica de una  estructura de datos doblemente ligada*
+    *↑ Explicación gráfica de una estructura de datos doblemente ligada*
 
     
 
@@ -874,9 +874,27 @@ myDoctor.showname(); // Llamar a un método
       }
       ````
 
-  
+- ### ¿Qúe es un Deque?
 
-  
+  Un **deque** (usualmente pronunciado como *deck*) es una interfaz en Java que permite manejar datos en una estructura de datos doblemente ligada (también conocida como *una cola de doble terminación*). Esto último es una colección lineal de elementos en la que se pueden insertar y eliminar elementos al principio y al final de la colección. La interfaz Deque proporciona métodos para acceder a ambos lados de la instancia de Deque y realizar operaciones como insertar, borrar y recuperar elementos. Las clases ``ArrayDeque`` y ``LinkedList`` implementan la interfaz Deque.
+
+  Los métodos de la interfaz Deque se dividen en las siguientes 3 partes:
+
+  - #### Insertar
+
+    Los métodos ``addfirst()`` y ``offerFirst()`` insertan elementos al principio de la instancia Deque. Los métodos ``addLast()`` y ``offerLast()`` insertan elementos al final de la instancia Deque. Cuando la capacidad de la instancia Deque está restringida, los métodos más apropiados son ``offerFirst()`` y ``offerLast()`` porque ``addFirst()`` podría no arrojar una excepción si está llena.
+
+  - #### Eliminar
+
+    Los métodos ``removeFirst()`` y ``pollFirst()`` eliminan elementos del principio de la instancia Deque. Los métodos ``removeLast()`` y ``pollLast()`` eliminan elementos del final. Los métodos ``pollFirst()`` y ``pollLast()`` devuelven nulos si el Deque está vacío mientras que los métodos ``removeFirst()`` y ``removeLast()`` lanzan una excepción si la instancia Deque está vacía.
+
+  - #### Recuperar
+
+    Los métodos ``getFirst()`` y ``peekFirst()`` recuperan el primer elemento de la instancia Deque. Estos métodos no eliminan el valor de la instancia Deque. De manera similar, los métodos ``getLast()`` y ``peekLast()`` recuperan el último elemento. Los métodos ``getFirst`()`` y ``getLast()`` lanzan una excepción si la instancia Deque está vacía mientras que los métodos ``peekFirst()`` y ``peekLast()`` devuelven NULL.
+
+    ![Tabla de Métodos de la interfaz Deque](https://i.imgur.com/JwFOIau.jpg)
+
+
 
 
 
