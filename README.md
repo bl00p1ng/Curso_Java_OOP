@@ -722,7 +722,163 @@ myDoctor.showname(); // Llamar a un método
   
   **Nota:** es muy común que los nombres de las interfaces terminen en *"able"* (**ejemplos:** ``rundable``, ``printable``, ``readable``), esto se debe a que las interfaces se enfocan en las actividades que son redundantes en el código. También es común encontrar que el nombre de la interfaz comience con una "I".
   
+- ### Creando una interfaz para definir si una fecha es agendable
+
+  #### Composición de interfaces en Clases
+
+  Es el proceso de añadirle comportamientos a una Clase mediante interfaces. Consiste en abstraer todos los métodos de una Clase y modularizarlos en una interfaz para poder reutilizarlos todas las veces que sean necesarias. Muchos desarrolladores hoy en día aconsejan usar la composición en lugar de la herencia pues en esta última la reutilización de código es lineal mientras que la composición se puede efectuar a cualquier Clase.
   
+  #### POJOS (Plain Old Java Object)
+  
+  Es el nombre con el que se conocen las Clases con getters y setters.
+  
+  **Nota:** una de las peculiaridades de las interfaces es que se pueden implementar múltiples Interfaces a una Clase.
+  
+  ````java
+  public class AppointmentNurse implements ISchedulable, Runable {
+  	...
+  }
+  ````
+  
+  
+
+- ### Collections
+
+  Son un tipo de interfaz en Java que permite trabajar con colecciones de datos. Los Colletions sólo trabajan con Objetos, por lo que para trabajar primitivos con Colletions es necesario recurrir a las Clases Wrapper.
+
+  A diferencia de los Arrays que tienen un tamaño fijo, los Collections tienen un tamaño dinámico.
+
+  ![Estructura de un Collection](https://i.imgur.com/Nlpb8SH.png)
+
+  El elemento más alto en la jerarquía es la interfaz **Collection**, la cuál tiene una series de métodos "básicos" donde su comportamiento será definido a medida que se vaya implementando a más elementos. De **Collection** se desprenden 2 interfaces principales **Set** y **List**.
+
+  #### Set
+
+  Caracteristicas:
+
+  - Almacena objetos únicos, no repetidos.
+  - La mayoría de las veces los objetos se almacenarán en desorden.
+  - No hay índice.
+
+  De Set a su vez se desprenden la Clase **HashSet**, la Interfaz **SortedSet** y a su vez de esta última se desprende la Clase **TreeSet**.
+
+  - ##### HashSet
+
+    Los elementos se guardan en **desorden** y gracias al mecanismo llamado hashing (obtiene un identificador del objeto) **permite almacenar objetos únicos.** 
+
+  - ##### TreeSet
+
+    Almacena **objetos únicos**, y gracias a su estructura de árbol el **acceso es sumamente rápido**.
+
+  
+
+  #### List
+
+  Caracteristicas:
+
+  - Puede almacenar objetos repetidos.
+  - Los objetos se almacenan en orden secuencial.
+  - Tenemos acceso al índice.
+
+  De List se desprenden la Clase **ArrayList**, la Clase **Vector** y la Clase **LinkedList**.
+
+  - ##### ArrayList
+
+    Puede tener duplicados, no está sincronizada por lo tanto es más rápida.
+
+  - ##### Vector
+
+    Es sincronizada, los datos están más seguros pero es más lento.
+
+  - ##### LinkedList
+
+    Puede contener elementos duplicados, no está sincronizada (es más  rápida) al ser una estructura de datos doblemente ligada podemos añadir  datos por encima de la pila o por debajo.
+
+    ![Explicación gráfica de una  estructura de datos doblemente ligada](https://i.imgur.com/NAa7Qmn.png)
+
+    *↑ Explicación gráfica de una  estructura de datos doblemente ligada*
+
+    
+
+  #### Map
+
+  Tiene las siguientes implementaciones:
+
+  - **HashTable**
+  - **LinkedHashMap**
+  - **HashMap**
+  - **SortedMap** → **TreeMap**
+
+  ![Estructura de un Map](https://i.imgur.com/iduGkKB.png)
+
+  La interfaz **Map** no hereda de la interfaz Collection  porque representa una estructura de datos de Mapeo y no de colección  simple de objetos. Esta estructura es más compleja, pues cada elemento  deberá venir en pareja con otro dato que funcionará como la llave del  elemento.
+
+  - ##### Declarar un Map
+
+    ````java
+    Map<Integer, String> map = new HashMap<Integer, String>();
+    Map<Integer, String> treeMap = new TreeMap<Integer, String>();
+    Map<Integer, String> linkedHashMap = new LinkedHashMap<Integer, String>();
+    ````
+
+    Sólo se puede crear un Map con las implementaciones **HashMap**, **TreeMap** y **LinkedHashMap** dejando fuera *HashTable* y *SortedMap*. *SortedMap* estará fuera pues es una interfaz y *HashTable* ha quedado deprecada pues tiene métodos redundantes en otras clases. 
+
+  - ##### Implenetaciones de Map
+
+    - ###### HashMap
+
+      Los elementos no se ordenan. No aceptan claves duplicadas ni valores nulos.
+
+    - ###### LinkedHashMap
+
+      Ordena los elementos conforme se van insertando; provocando que las búsquedas sean más lentas que las demás clases.
+
+    - ###### TreeMap
+
+      El Mapa lo ordena de forma “natural”. Por ejemplo, si la clave son  valores enteros (como luego veremos), los ordena de menos a mayor.
+
+  - ##### Iterar las diferentes implementaciones de Map
+
+    Para iterar las diferentes implementaciones de Map es necesario utilizar la interface **Iterator** y usar un bucle while para recorrer el Map.
+
+    - ###### Para HashMap
+
+      ````java
+      // Imprimir el Map con un Iterador
+      Iterator it = map.keySet().iterator();
+      while(it.hasNext()){
+        Integer key = it.next();
+        System.out.println("Clave: " + key + " -> Valor: " + map.get(key));
+      }
+      ````
+
+    - ###### Para LinkedHashMap
+
+      ````java
+      // Imprimir el Map con un Iterador
+      Iterator it = linkedHashMap.keySet().iterator();
+      while(it.hasNext()){
+        Integer key = it.next();
+        System.out.println("Clave: " + key + " -> Valor: " + linkedHashMap.get(key));
+      }
+      ````
+
+    - ###### Para TreeMap
+
+      ````java
+      // Imprimir el Map con un Iterador
+      Iterator it = treeMap.keySet().iterator();
+      while(it.hasNext()){
+        Integer key = it.next();
+        System.out.println("Clave: " + key + " -> Valor: " + treeMap.get(key));
+      }
+      ````
+
+  
+
+  
+
+
 
 
 
