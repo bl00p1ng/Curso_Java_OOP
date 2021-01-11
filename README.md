@@ -999,7 +999,23 @@ myDoctor.showname(); // Llamar a un método
   iSchedulable1.schedule(...);
   ````
 
-  
+- ### Diferencias entre las Interfaces y las Clases Abstractas
+
+  Las **interfaces** ahora cuentan con nuevos modificadores de acceso: ``default`` y ``private`` lo que significa que ahora se puede agregar comportamiento a los métodos de una interfaz, por lo que una interfaz tendrá métodos con implementación y otros sin implementación, exactamente igual que en una Clase abstracta.
+
+  #### Diferencias
+
+  - ##### Clases abstractas
+
+    Se usan para definir subclases, por lo que siempre debe ser heredada para poder llamar y sobrescribir los métodos. La herencia de métodos se hace de forma lineal; se pueden heredar métodos abstractos y no abstractos. En resumen una Clase abstracta sirve para redefinir nuevas Clases sin tener que crear nuevos objetos. Las Clases abstractas a diferencia de las interfaces se centran más en los objetos
+
+  - ##### Interfaces
+
+    Se tienen métodos abstractos y no abstractos, dichos métodos pueden implementarse en familias de Clases distintas por lo que aquí la implementación de los métodos no es lineal. En resumen las interfaces se usan cuando se quiere crear métodos que se puedan implementar en muchas familias, considerando las acciones que pueden tener en común muchos objetos.
+
+    ![Clases abstractas vs. Interfaces](https://i.imgur.com/ogOPI6L.png)
+
+    **Nota:** una buena práctica es que el diseño de las apps siempre este orientado a interfaces y no a la implementación. Hay que concentrase en crear buenas abstracciones, encontrar comportamientos comunes, tratar de forma independiente los módulos. 
 
 
 
