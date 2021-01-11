@@ -8,8 +8,8 @@ public class Doctor extends User {
     // Atributos
     private String speciality;
 
-    // Método constructor
 
+    // Método constructor
     public Doctor(String name, String email) {
 
         super(name, email);
@@ -17,19 +17,18 @@ public class Doctor extends User {
     }
 
     // Métodos
+
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
     public void addAvailableAppointment(Date date, String time) {
 
         availableAppointments.add(new AvailableAppointment(date, time));
 
     }
-
     public ArrayList<AvailableAppointment> getAvailableAppointments() {
 
         return availableAppointments;
 
     }
-
 
     // Getters y Setters
     public String getSpeciality() {
@@ -47,6 +46,14 @@ public class Doctor extends User {
         return super.toString() +
             "\nSpeciality: " + speciality +
             "\nAvailable: " + availableAppointments.toString();
+
+    }
+
+    @Override
+    public void showDataUser() {
+
+        System.out.println("🏥 Empleado del Hospital: Santa Clara");
+        System.out.println("🩺 Departamento: Oncología");
 
     }
 

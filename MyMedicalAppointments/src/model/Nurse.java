@@ -1,7 +1,6 @@
 package model;
 
-public
-class Nurse extends User {
+public class Nurse extends User {
 
     // Atributos
     private String speciality;
@@ -15,13 +14,22 @@ class Nurse extends User {
     }
 
     // Getters y Setters
-    public
-    String getSpeciality() {
+    public String getSpeciality() {
         return speciality;
     }
 
-    public
-    void setSpeciality(String speciality) {
+    public void setSpeciality(String speciality) {
         this.speciality = speciality;
     }
+
+    // Sobrescritura de métodos
+    @Override
+    public void showDataUser() {
+
+        System.out.println("🏥 Empleado del Hospital: Santa Clara");
+        System.out.println("💉 Departamentos: Pediatría, Oncología");
+        System.out.println("📄 Historial completo desde nacimiento");
+
+    }
+
 }

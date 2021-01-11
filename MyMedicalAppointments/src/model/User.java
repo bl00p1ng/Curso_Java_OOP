@@ -15,6 +15,9 @@ public abstract class User {
         this.email = email;
     }
 
+    // Métodos
+    public abstract void showDataUser();
+
     // Getters y Setters
     public int getId() {
         return id;

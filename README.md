@@ -918,7 +918,55 @@ myDoctor.showname(); // Llamar a un método
   }
   ````
   
+
+- ### Miembros abstractos
+
+  Definir un método abstracto:
+
+  ````java
+  public abstract class Figurar {
+      ... abstract void dibujate(); // Convierte al método en obligatorio
+  }
+  ````
+
+  Los **métodos abstractos** son obligatorios, a diferencia de los demás métodos que tenga una Clase abstracta y que no estén declarados con la palabra reservada ``abstract`` los cuales serán opcionales.
+
+  Se pueden tener Clases abstractas que tengan subclases que a su vez tengan métodos abstractos:
+
+  ````java
+  // Superclase
+  public abstract class Figura {
+      // Implementación
+  }
   
+  // Subclase
+  abstract class Triangulo extends Figura {
+      abstract void dibujate();
+      // Para tener un método abstracto la clase también debe ser abstracta
+  }
+  
+  // Clase hija de la subclase anterior
+  class TrianguloIsosceles extends Triangulo {
+      void dibujate() {
+          // Dibujar triángulo isosceles
+      }
+  }
+  ````
+
+  #### Ejemplo de Polimorfismo en las Clases abstractas
+
+  ````java
+  // Superclase
+  public abstract class User {
+  	public abstract void showDataUser();   
+  }
+  
+  // Main.java
+  User user = new Doctor("Anahí", "anahí@santaclara.health");
+  user.showDataUser();
+  ````
+
+  A pesar de que ``User`` es una Clase abstracta por lo que no puede ser instanciada, gracias al polimorfismo *"puede tomar la forma"* de la clase ``Doctor``, pudiendo convertirse en una instancia de dicha Clase.
 
 
 
