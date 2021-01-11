@@ -894,7 +894,31 @@ myDoctor.showname(); // Llamar a un método
 
     ![Tabla de Métodos de la interfaz Deque](https://i.imgur.com/JwFOIau.jpg)
 
+## 📚 Módulo 4. Aplicar Abstracción
 
+- ### Clases Abstractas
+
+  El **polimorfismo** se puede aplicar en la *herencia* sobrescribiendo métodos. n el caso de la implementación de Interfaces también se aplica el polimorfismo.
+
+  Cuando se implementa una **Interfaz** sobre una Clase es necesario que dicha Clase implemente todos los métodos de la Interfaz. No obstante hay casos en los que hacer esto es no necesario y sólo no se ocupa implementar todos los métodos de una interfaz.
+
+  En el caso la **Herencia**, cuando se sobrescribe un método, este hereda la implementación que tenía en la superclase, pero en ocasiones no se necesita heredar la implementación de un método. Otra situación que se puede presentar en la herencia es que no se quiere crear una instancia de una Clase padre ya que esta es muy genérica.
+
+  Las **Clases abstractas** permiten solucionar los problemas citados anteriormente. Las Clases abstractas son una especie de combinación entre Interfaces y Herencia. En este tipo de Clases se puede definir que tipo de métodos son obligatorios de implementar y cuáles no y además no se crean instancias.
+
+  ````java
+  // Declarar una Clase abstracta
+  public abstract class Figura {
+      // Implementación
+  }
+  
+// Usar una Clase abstracta
+  class Triangulo extends Figura {
+      // Implementación
+  }
+  ````
+  
+  
 
 
 
