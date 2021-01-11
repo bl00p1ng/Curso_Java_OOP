@@ -968,7 +968,38 @@ myDoctor.showname(); // Llamar a un método
 
   A pesar de que ``User`` es una Clase abstracta por lo que no puede ser instanciada, gracias al polimorfismo *"puede tomar la forma"* de la clase ``Doctor``, pudiendo convertirse en una instancia de dicha Clase.
 
+- ### Clases Anónimas
 
+  Son una especie de *hack* para instanciar Clases abstractas. Dicha instanciación es temporal, pues sólo esta vigente en el momento en que se hace la instanciación, no puede reutilizar en otra Clase el comportamiento definido en una Clase anónima.
+
+  ````java
+  User user1 = new User("Felipe Molina", "felipe@example.com") {
+      @Override
+      public void showDataUser() {
+  		// Implementación
+      }
+  }
+  
+  user1.showDataUser();
+  ````
+
+  Las Clases anónimas se usan mucho en desarrollo para Android, para por ejemplo hacer un elemento clickeable. Usando una Clase anónima se puede agregar el método ``onClickListener`` y darle un comportamiento que sólo va a ser vigente para ese momento.
+
+  Las Clases anónimas también se pueden usar con interfaces:
+
+  ````java
+  ISchedulable iSchedulable = new ISchedulable() {
+      @Override
+      public void schedule(Date date, String time) {
+  
+      }
+  };
+  
+  ISchedulable iSchedulable1 = new AppointmentDoctor();
+  iSchedulable1.schedule(...);
+  ````
+
+  
 
 
 
