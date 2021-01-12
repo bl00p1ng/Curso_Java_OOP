@@ -912,6 +912,8 @@ myDoctor.showname(); // Llamar a un método
       // Implementación
   }
   
+  ````
+
 // Usar una Clase abstracta
   class Triangulo extends Figura {
       // Implementación
@@ -1017,33 +1019,33 @@ myDoctor.showname(); // Llamar a un método
 
     **Nota:** una buena práctica es que el diseño de las apps siempre este orientado a interfaces y no a la implementación. Hay que concentrase en crear buenas abstracciones, encontrar comportamientos comunes, tratar de forma independiente los módulos. En otras palabras, hay que enfocarse más en los métodos (interfaz) que re-definir las clases (clase abstracta).
 
-  - ### Interfaces en Java 8 y 9
+- ### Interfaces en Java 8 y 9
 
-    La sintaxis de las interfaces cambio un poco a partir de Java 8 y 9.
+  La sintaxis de las interfaces cambio un poco a partir de Java 8 y 9.
 
-    - #### Java 8
+  - #### Java 8
 
-      Ya  no todos los métodos tiene que ser abstractos pues se cuenta con un nuevo modificador de acceso para los métodos, ``default``. Esto permite que los métodos dentro de una interfaz puedan tener implementación, y a su vez dicha implementación se puede reutilizar en cualquier Clase sin importar a que familia pertenezca. Este modificador ``default`` en las interfaces tiene las mismas reglas y restricciones que en en caso de los métodos convencionales, es decir puede ser accedido a nivel de la Clase y por Clases/Interfaces que estén dentro de otro paquete.
+    Ya  no todos los métodos tiene que ser abstractos pues se cuenta con un nuevo modificador de acceso para los métodos, ``default``. Esto permite que los métodos dentro de una interfaz puedan tener implementación, y a su vez dicha implementación se puede reutilizar en cualquier Clase sin importar a que familia pertenezca. Este modificador ``default`` en las interfaces tiene las mismas reglas y restricciones que en en caso de los métodos convencionales, es decir puede ser accedido a nivel de la Clase y por Clases/Interfaces que estén dentro de otro paquete.
 
-    - #### Java 9
+  - #### Java 9
 
-      Se puede añadir el modificador de acceso ``private`` a los métodos de una Interfaz. Este modificador tiene las mismas restricciones que en el caso de los métodos convencionales, es decir, sólo puede ser accedido a nivel de la Clase. También permite hacer una implementación en el método de una Interfaz.
+    Se puede añadir el modificador de acceso ``private`` a los métodos de una Interfaz. Este modificador tiene las mismas restricciones que en el caso de los métodos convencionales, es decir, sólo puede ser accedido a nivel de la Clase. También permite hacer una implementación en el método de una Interfaz.
 
-    ````java
-    public interface MyInterface {
-        default void defaultMethod() {
-            privateMethod("Hello from the default method!")
-        }
-        
-        private void privateMethod(final String string) {
-            System.out.println(string);
-        }
-        
-        void normalMethod();
-    }
-    ````
+  ````java
+  public interface MyInterface {
+      default void defaultMethod() {
+          privateMethod("Hello from the default method!")
+      }
+      
+      private void privateMethod(final String string) {
+          System.out.println(string);
+      }
+      
+      void normalMethod();
+  }
+  ````
 
-    Este tipo de interfaces son muy útiles al trabajar con bases de datos.
+  Este tipo de interfaces son muy útiles al trabajar con bases de datos.
 
 - ### Herencia en interfaces
 
@@ -1077,9 +1079,10 @@ myDoctor.showname(); // Llamar a un método
   }		
   ````
 
-  
 
-  
+
+
+
 
 
 
