@@ -1079,8 +1079,7 @@ myDoctor.showname(); // Llamar a un método
   }		
   ````
 
-
-
+  **Nota: ** es una práctica nombrar los métodos de la forma más descriptiva posible, aún si quedan muy largos. En caso de que el nombre sea excesivamente largo hay que buscar una serie de palabras claves más cortas que describan lo que hace el método.
 
 
 
