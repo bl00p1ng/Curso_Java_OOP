@@ -1045,11 +1045,41 @@ myDoctor.showname(); // Llamar a un método
 
     Este tipo de interfaces son muy útiles al trabajar con bases de datos.
 
+- ### Herencia en interfaces
 
+  En las interfaces también se puede aplicar la herencia usando la palabra reservada ``extends``. En las interfaces la herencia funciona igual que en las Clases con la diferencia de que en las interfaces  si se puede tener herencia múltiple:
 
+  ````java
+  public interface IReadable {
+  	public void read();
+  }
+  
+  
+  public interface Visualizable extends IReadable, Serializable {
+  	public void setViewed();
+  	public Boolean isViewed();
+  	public String timeViewed();
+  }
+  ````
 
+  Además gracias con los modificadores de acceso ``default`` y ``private`` traídos en Java 8 y 9 respectivamente ahora es posible sobrescribir métodos y añadirles comportamiento, si es el caso:
 
+  ````java
+  public interface Visualizable extends IReadable, Serializable {
+  	public void setViewed();
+  	public Boolean isViewed();
+  	public String timeViewed();
+  	
+      @Override
+          default void read() {
+          // TODO Auto-generated method stub
+      }
+  }		
+  ````
 
+  
+
+  
 
 
 
