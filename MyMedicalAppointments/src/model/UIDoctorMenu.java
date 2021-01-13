@@ -2,9 +2,12 @@ package model;
 
 import UI.UIMenu;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UIDoctorMenu {
+
+    public static ArrayList<Doctor> doctorsAvailableAppointments = new ArrayList<>();
 
     public static void showDoctorMenu() {
 
@@ -68,6 +71,24 @@ public class UIDoctorMenu {
                 String date = scanner.nextLine();
 
                 System.out.println("You date is: " + date + "\n1. Correct \n2. Change date");
+                int responseDate = Integer.parseInt(scanner.nextLine());
+
+                // Volver a mostrar el menú si se quiere cambiar la fecha de la cita
+                if (responseDate == 2) continue;
+
+                int responseTime = 0;
+                String time = "";
+                do {
+
+                    System.out.println("Insert the time available for date: " + date + " [hh:mm]");
+                    time = scanner.nextLine();
+                    System.out.println("You time is: " + time + "\n1. Correct \n2. Change time");
+                    responseTime = Integer.parseInt(scanner.nextLine());
+
+                } while (responseTime == 2);
+
+                UIMenu.doctorLogged.addAvailableAppointment(date, time);
+                checkDoctorAvailableAppointments(UIMenu.doctorLogged);
 
             } else if (response == 0) {
 
@@ -76,6 +97,18 @@ public class UIDoctorMenu {
             }
 
         } while (response != 0);
+
+    }
+
+    private static void checkDoctorAvailableAppointments(Doctor doctor) {
+
+        // Verificar si un doctor tiene citas y no esta en el arrayList de doctores con citas
+        if (doctor.getAvailableAppointments().size() > 0 && !doctorsAvailableAppointments.contains(doctor)) {
+
+            // Si sew cumplen ambas condiciones se añade el doctor al arrayList
+            doctorsAvailableAppointments.add(doctor);
+
+        }
 
     }
 

@@ -1,5 +1,7 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -19,7 +21,8 @@ public class Doctor extends User {
     // Métodos
 
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
-    public void addAvailableAppointment(Date date, String time) {
+    public void addAvailableAppointment(String date, String time) {
+
 
         availableAppointments.add(new AvailableAppointment(date, time));
 
@@ -64,12 +67,20 @@ public class Doctor extends User {
         private int id;
         private Date date;
         String time;
-
+        SimpleDateFormat dateFormat = new SimpleDateFormat("ss/MM/yyyy");
 
         // Constructor
-        public AvailableAppointment(Date date, String time) {
+        public AvailableAppointment(String date, String time) {
 
-            this.date = date;
+            try {
+
+                this.date = dateFormat.parse(date);
+
+            } catch (ParseException e) {
+
+                e.printStackTrace();
+
+            }
             this.time = time;
 
         }
@@ -77,6 +88,10 @@ public class Doctor extends User {
         // Getters y Setters Static Nested Class
         public Date getDate() {
             return date;
+        }
+
+        public String getDate(String date) {
+            return dateFormat.format(date);
         }
 
         public void setDate(Date date) {
