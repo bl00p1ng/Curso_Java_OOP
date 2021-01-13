@@ -1,6 +1,7 @@
-package model;
+package UI;
 
 import UI.UIMenu;
+import model.Doctor;
 
 import java.util.ArrayList;
 import java.util.Scanner;

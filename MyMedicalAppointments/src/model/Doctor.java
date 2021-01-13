@@ -9,7 +9,7 @@ public class Doctor extends User {
 
     // Atributos
     private String speciality;
-
+    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     // Método constructor
     public Doctor(String name, String email) {
@@ -19,8 +19,6 @@ public class Doctor extends User {
     }
 
     // Métodos
-
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
     public void addAvailableAppointment(String date, String time) {
 
 
@@ -86,11 +84,11 @@ public class Doctor extends User {
         }
 
         // Getters y Setters Static Nested Class
-        public Date getDate() {
+        public String getDate(String date) {
             return date;
         }
 
-        public String getDate(String date) {
+        public String getDate() {
             return dateFormat.format(date);
         }
 
